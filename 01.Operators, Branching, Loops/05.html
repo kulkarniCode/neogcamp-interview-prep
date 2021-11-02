@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operators, Branching, Loops</title>
+  </head>
+  <body>
+    <h1>05. Program to find the minimum out of three given numbers.</h1>
+    <form>
+      <label for="num1">Enter the first number: </label>
+      <input type="number" name="num1" id="num1" />
+      <label for="num2">Enter the second number: </label>
+      <input type="number" name="num2" id="num2" />
+      <label for="num3">Enter the third number: </label>
+      <input type="number" name="num3" id="num3" />
+    </form>
+    <button type="submit" id="check">Check</button>
+    <div class="output"></div>
+    <script defer>
+      const num1 = document.querySelector("#num1");
+      const num2 = document.querySelector("#num2");
+      const num3 = document.querySelector("#num3");
+      const check = document.querySelector("#check");
+      const output = document.querySelector(".output");
+
+      check.addEventListener("click", () => {
+        const min = Math.min(
+          Number(num1.value),
+          Number(num2.value),
+          Number(num3.value)
+        );
+        output.innerHTML = `<p>The minimum number is : ${min}</p>`;
+      });
+    </script>
+  </body>
+</html>

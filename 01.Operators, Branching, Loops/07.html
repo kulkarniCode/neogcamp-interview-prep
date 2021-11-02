@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operators, Branching, Loops</title>
+    <style>
+      p {
+        word-wrap: break-word;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>FizzBuzz</h1>
+    <button id="generate">Generate</button>
+    <div class="output"></div>
+    <script defer>
+      const generate = document.querySelector("#generate");
+      const output = document.querySelector(".output");
+
+      generate.addEventListener("click", () => {
+        let arr = [];
+        let item = "";
+        for (i = 1; i <= 100; i++) {
+          if (i % 3 === 0 && i % 5 === 0) {
+            item = "FIzzBuzz";
+          } else if (i % 3 === 0) {
+            item = "Fizz";
+          } else if (i % 5 === 0) {
+            item = "Buzz";
+          } else {
+            item = i;
+          }
+          arr.push(item);
+        }
+
+        output.innerHTML = `<p>[${arr}]</p>`;
+      });
+    </script>
+  </body>
+</html>
