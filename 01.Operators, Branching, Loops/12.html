@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operators, Branching, Loops</title>
+  </head>
+  <body>
+    <h1>Prime Number Checker</h1>
+    <form>
+      <label for="num">Enter a number: </label>
+      <input type="number" name="num" id="num" />
+    </form>
+    <button id="check">Check</button>
+    <div class="output"></div>
+    <script defer>
+      const num = document.querySelector("#num");
+      const check = document.querySelector("#check");
+      const output = document.querySelector(".output");
+
+      const isPrime = (num) => {
+        for (let i = 2; i < num; i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+        return num > 1;
+      };
+      check.addEventListener("click", () => {
+        let n = Number(num.value);
+        if (isPrime(n)) {
+          output.innerHTML = `${n} is a prime number.`;
+        } else {
+          output.innerHTML = `${n} is a not a prime number.`;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operators, Branching, Loops</title>
+  </head>
+  <body>
+    <h1>Weekday or Weekend ???</h1>
+    <form>
+      <label for="day">Enter Day: </label>
+      <input type="text" name="day" id="day" />
+    </form>
+    <button id="check">Check</button>
+    <div id="output"></div>
+    <script defer>
+      const dayInput = document.querySelector("#day");
+      const checkBtn = document.querySelector("#check");
+      const outputDiv = document.querySelector("#output");
+
+      const weekday = ["mon", "tue", "wed", "thu", "fri"];
+      const weekend = ["sat", "sun"];
+
+      checkBtn.addEventListener("click", () => {
+        let day = dayInput.value;
+        let result;
+        if (weekday.includes(day.toLowerCase().slice(0, 3))) {
+          result = "It's a weekday.";
+        } else if (weekend.includes(day.toLowerCase().slice(0, 3))) {
+          result = "It's a weekend.";
+        } else {
+          result = "Invalid Input";
+        }
+        outputDiv.innerHTML = `<h3>${result}</h3>`;
+      });
+    </script>
+  </body>
+</html>

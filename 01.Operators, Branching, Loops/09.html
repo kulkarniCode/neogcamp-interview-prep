@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operators, Branching, Loops</title>
+    <script defer></script>
+  </head>
+  <body>
+    <h1>
+      09. Program to take a number input from user and print multiplication
+      table 12 times for that number.
+    </h1>
+    <form>
+      <label for="num">Enter a number: </label>
+      <input type="number" name="num" id="num" />
+    </form>
+    <button id="generate">Generate</button>
+    <div class="output"></div>
+    <script defer>
+      const num = document.querySelector("#num");
+      const generate = document.querySelector("#generate");
+      const output = document.querySelector(".output");
+
+      generate.addEventListener("click", () => {
+        const number = Number(num.value);
+
+        for (let i = 1; i <= 10; i++) {
+          let result = i * number;
+          output.innerHTML += `<p>${number} * ${i} = ${result}</p>\n`;
+          continue;
+        }
+      });
+    </script>
+  </body>
+</html>

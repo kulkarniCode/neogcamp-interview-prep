@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operators, Branching, Loops</title>
+  </head>
+  <body>
+    <h1>Factorial</h1>
+    <form>
+      <label for="num">Enter a number: </label>
+      <input type="number" name="num" id="num" />
+    </form>
+    <button id="generate">Generate</button>
+    <div class="output"></div>
+    <script defer>
+      const num = document.querySelector("#num");
+      const generate = document.querySelector("#generate");
+      const output = document.querySelector(".output");
+
+      generate.addEventListener("click", () => {
+        let result = 1;
+        let n = Number(num.value);
+        if (n > 1) {
+          for (let i = 1; i <= n; i++) {
+            result *= i;
+          }
+        }
+        output.innerHTML = `<p>${n}! = ${result}</p>`;
+      });
+    </script>
+  </body>
+</html>

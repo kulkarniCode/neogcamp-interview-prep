@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Operators, Branching, Loops</title>
+  </head>
+  <body>
+    <h1>Fibonacci Series</h1>
+    <form>
+      <label for="num">Enter a number: </label>
+      <input type="number" name="num" id="num" />
+    </form>
+    <button id="generate">Generate</button>
+    <div class="output"></div>
+    <script defer>
+      const num = document.querySelector("#num");
+      const generate = document.querySelector("#generate");
+      const output = document.querySelector(".output");
+
+      generate.addEventListener("click", () => {
+        let fib = [0, 1];
+        const limit = Number(num.value);
+        for (let i = 2; i < limit; i++) {
+          fib[i] = fib[i - 2] + fib[i - 1];
+        }
+        output.innerHTML = `<p>Limit = ${limit}</p><p>${fib}</p>`;
+        console.log(fib);
+      });
+    </script>
+  </body>
+</html>
