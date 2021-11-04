@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview Questions</title>
+  </head>
+  <body>
+    <form>
+      <input type="text" name="message" id="message" />
+    </form>
+    <button id="submit">Submit</button>
+    <div class="output"></div>
+    <button id="plus">+</button>
+    <button id="minus">-</button>
+
+    <script>
+      const message = document.querySelector("#message");
+      const submit = document.querySelector("#submit");
+      const plus = document.querySelector("#plus");
+      const minus = document.querySelector("#minus");
+      const output = document.querySelector(".output");
+
+      submit.addEventListener("click", () => {
+        output.innerText = message.value;
+      });
+
+      plus.addEventListener("click", () => {
+        let currentSize = parseFloat(
+          window.getComputedStyle(output, null).getPropertyValue("font-size")
+        );
+        output.style.fontSize = `${currentSize + 2}px`;
+      });
+      minus.addEventListener("click", () => {
+        let currentSize = parseFloat(
+          window.getComputedStyle(output, null).getPropertyValue("font-size")
+        );
+        output.style.fontSize = `${currentSize - 2}px`;
+      });
+    </script>
+  </body>
+</html>
