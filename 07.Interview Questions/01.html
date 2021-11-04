@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interview Questions</title>
+  </head>
+  <body>
+    <form>
+      <label for="num1">Num 1:</label
+      ><input type="number" name="num1" id="num1" />
+      <label for="num2">Num 2:</label
+      ><input type="number" name="num2" id="num2" />
+    </form>
+    <button id="addition">+</button>
+    <button id="subtraction">-</button>
+    <button id="multiplication">*</button>
+    <button id="division">/</button>
+    <div class="output"></div>
+    <script>
+      const num1 = document.querySelector("#num1");
+      const num2 = document.querySelector("#num2");
+      const addition = document.querySelector("#addition");
+      const subtraction = document.querySelector("#subtraction");
+      const multiplication = document.querySelector("#multiplication");
+      const division = document.querySelector("#division");
+      const outputDiv = document.querySelector(".output");
+      let result;
+
+      const add = () => {
+        let n1 = Number(num1.value);
+        let n2 = Number(num2.value);
+        result = n1 + n2;
+        outputDiv.innerHTML = `${n1} + ${n2} = ${result}`;
+      };
+      const subtract = () => {
+        let n1 = Number(num1.value);
+        let n2 = Number(num2.value);
+        result = n1 - n2;
+        outputDiv.innerHTML = `${n1} - ${n2} = ${result}`;
+      };
+      const multiply = () => {
+        let n1 = Number(num1.value);
+        let n2 = Number(num2.value);
+        result = n1 * n2;
+        outputDiv.innerHTML = `${n1} * ${n2} = ${result}`;
+      };
+      const divide = () => {
+        let n1 = Number(num1.value);
+        let n2 = Number(num2.value);
+        result = n1 / n2;
+        outputDiv.innerHTML = `${n1} / ${n2} = ${result}`;
+      };
+
+      addition.addEventListener("click", add);
+      subtraction.addEventListener("click", subtract);
+      multiplication.addEventListener("click", multiply);
+      division.addEventListener("click", divide);
+    </script>
+  </body>
+</html>
